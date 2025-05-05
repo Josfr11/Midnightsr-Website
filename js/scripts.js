@@ -55,5 +55,20 @@ window.addEventListener('DOMContentLoaded', event => {
     new SimpleLightbox({
         elements: '#portfolio a.portfolio-box'
     });
+//Example: Adding a form submission to Firestore
+    document.getElementById('submit-btn').addEventListener('click',function(e){
+        e.preventDefault();
 
+        const name=document.getElementById('name-input').value;
+        const email=document.getElementById('email-input').value;
+
+        db.collecion("submissions").add({
+            name: name;
+            email: email;
+        timestamp: new Date()
+    })
+
+    .the(() => alert('Submitted successfully!"))
+    .catch(error=> console.error("Error adding document: ",error));
+});
 });
