@@ -197,19 +197,51 @@
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Name input-->
                            
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="password" type="password" placeholder="Enter your password" data-sb-validations="required" />
-                                <label for="password">Password</label>
-                                <div class="invalid-feedback" data-sb-feedback="password:required">A password is required.</div>
+                            <div class="form-container">
+                  
+                                <form>
+                                  <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" id="email" name="email" placeholder="Email address" required>
+                                  </div>
+                            
+                                  <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Name" required>
+                                  </div>
+                            
+                                  <div class="form-group">
+                                    <label for="event">Name of Event</label>
+                                    <input type="text" id="event" name="event" placeholder="Name of Event" required>
+                                  </div>
+                            
+                                  <div class="form-group">
+                                    <label>Gender</label>
+                                    <div class="gender-box">
+                                      <label class="gender-option">
+                                        <input type="radio" name="gender" value="male" required> Male
+                                      </label>
+                                      <label class="gender-option">
+                                        <input type="radio" name="gender" value="female"> Female
+                                      </label>
+                                      <label class="gender-option">
+                                        <input type="radio" name="gender" value="female"> Others
+                                      </label>
+                                    </div>
+                                  </div>
+                            
+                                  <div class="form-group">
+                                    <input type="date" required>
+                                  </div>
+                                </form>
                               </div>
+
+                              <div class="form-group">
+                                <label for="comments">Comments / Message</label>
+                                <textarea id="comments" name="comments" placeholder="Type your comments here..."></textarea>
+                              </div>
+                            
+                            
                               
                             <!-- Message input-->
                          
@@ -234,9 +266,6 @@
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
-                            <p class="toggle-link">
-                               <a> You don't have an account? </a><a href="login.html" class="sign-link">sign here</a>
-                            </p>
                         </form>
                     </div>
                 </div>
