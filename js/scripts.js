@@ -68,37 +68,5 @@ window.addEventListener('DOMContentLoaded', event => {
   appId: "1:972165014924:web:8e03bf4a457d350f0de2a9"
 };
     
-//Example: Adding a form submission to Firestore
-       // initialize firebase //
-    firebase.initializeApp(firebaseConfig);
-// reference database //
-    var midnightsr-db = firebase.database().ref('contactForm');
-
-document.getElementById('contactForm').addEventListener("submit", submitForm);
-
-    function submitForm(e) {
-        e.preventDefault();
-
-        var name = getElementVal("name");
-        var email = getElementVal("email");
-        var event_name = getElementVal("event_name"); 
-        var gender = getElementVal("gender");
-        var event_date = getElementVal("event_date");
-        var message =    getElementVal("message");
-
-        seveMessages(name, email, event_name, gender, event_date, message);
-      }
-    const saveMessages = (name, email, event_name, gender, event_date, message) => {
-    var newContactForm = contactForm.push():
-
-    newContactForm.set({
-        name : name,
-        email : email,
-        event_name : event_name,
-        gender : gender,
-        event_date : event_date,
-        message : message,
-        
-    
 });
 });
