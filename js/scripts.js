@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
@@ -55,20 +56,49 @@ window.addEventListener('DOMContentLoaded', event => {
     new SimpleLightbox({
         elements: '#portfolio a.portfolio-box'
     });
+
+    
+    const firebaseConfig = {
+  apiKey: "AIzaSyBVx56_9igWJZyLnAVf28uEM1yuCJY4P9U",
+  authDomain: "midnightsr-db-37232.firebaseapp.com",
+  databaseURL:"https://midnightsr-db-37232-default-rtdb.firebaseio.com",
+  projectId: "midnightsr-db-37232",
+  storageBucket: "midnightsr-db-37232.firebasestorage.app",
+  messagingSenderId: "972165014924",
+  appId: "1:972165014924:web:8e03bf4a457d350f0de2a9"
+};
+    
 //Example: Adding a form submission to Firestore
-    document.getElementById('submit-btn').addEventListener('click',function(e){
+       // initialize firebase //
+    firebase.initializeApp(firebaseConfig);
+// reference database //
+    var midnightsr-db = firebase.database().ref('contactForm');
+
+document.getElementById('contactForm').addEventListener("submit", submitForm);
+
+    function submitForm(e) {
         e.preventDefault();
 
-        const name=document.getElementById('name-input').value;
-        const email=document.getElementById('email-input').value;
+        var name = getElementVal("name");
+        var email = getElementVal("email");
+        var event_name = getElementVal("event_name"); 
+        var gender = getElementVal("gender");
+        var event_date = getElementVal("event_date");
+        var message =    getElementVal("message");
 
-        db.collecion("submissions").add({
-            name: name,
-            email: email,
-        timestamp: new Date()
-    })
+        seveMessages(name, email, event_name, gender, event_date, message);
+      }
+    const saveMessages = (name, email, event_name, gender, event_date, message) => {
+    var newContactForm = contactForm.push():
 
-    .the(() => alert('Submitted successfully!"))
-    .catch(error=> console.error("Error adding document: ",error));
+    newContactForm.set({
+        name : name,
+        email : email,
+        event_name : event_name,
+        gender : gender,
+        event_date : event_date,
+        message : message,
+        
+    
 });
 });
