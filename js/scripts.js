@@ -38,7 +38,6 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
-
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
@@ -52,43 +51,9 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-     <script>
-            // JavaScript for Bootstrap validation
-            (function () {
-                'use strict';
-        
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                const forms = document.querySelectorAll('.needs-validation');
-        
-                // Loop over them and prevent submission if invalid
-                Array.from(forms).forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-        
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            })();
-        </script> 
-
     // Activate SimpleLightbox plugin for portfolio items
     new SimpleLightbox({
         elements: '#portfolio a.portfolio-box'
     });
 
-    
-    const firebaseConfig = {
-  apiKey: "AIzaSyBVx56_9igWJZyLnAVf28uEM1yuCJY4P9U",
-  authDomain: "midnightsr-db-37232.firebaseapp.com",
-  databaseURL:"https://midnightsr-db-37232-default-rtdb.firebaseio.com",
-  projectId: "midnightsr-db-37232",
-  storageBucket: "midnightsr-db-37232.firebasestorage.app",
-  messagingSenderId: "972165014924",
-  appId: "1:972165014924:web:8e03bf4a457d350f0de2a9"
-};
-    
-});
 });
