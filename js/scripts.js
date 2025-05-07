@@ -52,6 +52,28 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+     <script>
+            // JavaScript for Bootstrap validation
+            (function () {
+                'use strict';
+        
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation');
+        
+                // Loop over them and prevent submission if invalid
+                Array.from(forms).forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+        
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            })();
+        </script> 
+
     // Activate SimpleLightbox plugin for portfolio items
     new SimpleLightbox({
         elements: '#portfolio a.portfolio-box'
