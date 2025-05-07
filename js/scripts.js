@@ -63,8 +63,8 @@ window.addEventListener('DOMContentLoaded', event => {
         const email=document.getElementById('email-input').value;
 
         db.collecion("submissions").add({
-            name: name;
-            email: email;
+            name: name,
+            email: email,
         timestamp: new Date()
     })
 
