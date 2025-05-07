@@ -236,7 +236,7 @@ firebase, initializeApp(firebaseConfig):
 
     <!-- Event input -->
     <div class="form-floating mb-3">
-        <input class="form-control" id="event" type="text" placeholder="Event Name" name="event" data-sb-validations="required" />
+        <input class="form-control" id="event_name" type="text" placeholder="Event Name" name="event" data-sb-validations="required" />
         <label for="event">Name of Event</label>
         <div class="invalid-feedback" data-sb-feedback="event:required">An event name is required.</div>
     </div>
@@ -245,15 +245,15 @@ firebase, initializeApp(firebaseConfig):
     <div class="mb-3">
         <label class="form-label d-block">Gender</label>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required />
+            <input class="form-check-input" type="radio" name="gender" id="gender" value="male" required />
             <label class="form-check-label" for="genderMale">Male</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" />
+            <input class="form-check-input" type="radio" name="gender" id="gender" value="female" />
             <label class="form-check-label" for="genderFemale">Female</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other" />
+            <input class="form-check-input" type="radio" name="gender" id="gender" value="other" />
             <label class="form-check-label" for="genderOther">Others</label>
         </div>
     </div>
@@ -261,18 +261,18 @@ firebase, initializeApp(firebaseConfig):
     <!-- Date input -->
     <div class="mb-3">
         <label for="eventDate" class="form-label">Event Date</label>
-        <input class="form-control" type="date" id="eventDate" name="date" required />
+        <input class="form-control" type="date" id="event_date" name="date" required />
     </div>
 
     <!-- Message / Comments input -->
     <div class="form-floating mb-3">
-        <textarea class="form-control" id="comments" name="comments" placeholder="Type your comments here..." style="height: 10rem" data-sb-validations="required"></textarea>
+        <textarea class="form-control" id="message" name="comments" placeholder="Type your comments here..." style="height: 10rem" data-sb-validations="required"></textarea>
         <label for="comments">Comments / Message</label>
         <div class="invalid-feedback" data-sb-feedback="comments:required">A message is required.</div>
     </div>
 
     <!-- Success message -->
-    <div class="d-none" id="submitSuccessMessage">
+    <div class="d-none" id="submitted_at">
         <div class="text-center mb-3">
             <div class="fw-bolder">Form submission successful!</div>
             <br />
