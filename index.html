@@ -1,351 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Midnight SR</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap Icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
 
-        
-</script>
-        
-<!-- Firebase SD K -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Midnight SR</title>
 
-<script src="https://wwww.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-<script src="https://wwww.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+    <!-- Styles & Fonts -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,700" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+        }
+        .invalid-feedback {
+            display: none;
+            color: #dc3545;
+            font-size: 0.875em;
+        }
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        .gender-error {
+            display: none;
+            color: #dc3545;
+            font-size: 0.875em;
+        }
+        .divider {
+            height: 3px;
+            background-color: #0d6efd;
+            margin: 1rem auto;
+            width: 100px;
+        }
+        .page-section {
+            padding: 5rem 0;
+        }
+        .btn-xl {
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+        }
+        .form-floating {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .form-floating > label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 1rem 0.75rem;
+            pointer-events: none;
+            transform-origin: 0 0;
+            transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+        }
+    </style>
+</head>
 
-<script>
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+<body id="page-top">
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBVx56_9igWJZyLnAVf28uEM1yuCJY4P9U",
-  authDomain: "midnightsr-db-37232.firebaseapp.com",
-  projectId: "midnightsr-db-37232",
-  storageBucket: "midnightsr-db-37232.firebasestorage.app",
-  messagingSenderId: "972165014924",
-  appId: "1:972165014924:web:8e03bf4a457d350f0de2a9"
-};
+    <!-- Form section -->
+    <section id="contact" class="page-section">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">Join the Ride</h2>
+            <hr class="divider" />
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-constdb = firebaseConfig.firestore();
-
-</script>
-
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Midnight SR</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Events</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">We Ride as One</h1>
-                        <hr class="divider" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Midnight SR is built on the foundations of brotherhood, respect, and loyalty. We ride together, support our community, and uphold the traditions of the motorcycle club culture with honor</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+            <form id="contactForm" novalidate>
+                <!-- Name Field -->
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="name" type="text" placeholder="Enter your name" required />
+                    <label for="name">Full Name</label>
+                    <div class="invalid-feedback">
+                        Please provide your name.
                     </div>
                 </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">About Us</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">About Midnight SR
-                            Midnight SR is more than just a motorcycle club its a brotherhood built on respect, loyalty, and the love for the open road. Founded by passionate riders, we believe in the freedom that comes with every mile, the bonds formed on every journey, and the responsibility we carry as part of the riding community.
-                            <h2 class="text-white mt-0">Who We Are?</h2>
-                            <hr class="divider divider-light" />
-                            <p class="text-white-75 mb-4">
-                            We are a group of riders united by our passion for motorcycles and a commitment to supporting one another both on and off the road. Whether it's late-night rides, or just sharing stories over a bonfire, Midnight SR is a family that rides as one.</p>
-                            <h2 class="text-white mt-0">Mission</h2>
-                            <hr class="divider divider-light" />
-                            <p class="text-white-75 mb-4">Our Mission
-                            To promote safe and responsible riding.</p>
-                            
-                            <p class="text-white-75 mb-4">To foster strong camaraderie among fellow riders.</p>
-                            
-                            <p class="text-white-75 mb-4">To support our community through events and outreach programs.</p>
-                            
-                            <p class="text-white-75 mb-4">To uphold the traditions of the motorcycle culture with honor and pride.</p>
-                            <h2 class="text-white mt-0">Join the Ride!</h2>
-                            <hr class="divider divider-light" />
-                            <p class="text-white-75 mb-4"> Join the Ride
-                            At Midnight SR, we welcome riders who share our values of brotherhood, respect, and adventure. Whether you ride solo or as part of a crew, if you have the heart of a true rider, you have a place with us.
-                            
-                            We Ride as One! </p>
-                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+
+                <!-- Email Field -->
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                    <label for="email">Email address</label>
+                    <div class="invalid-feedback">
+                        Please provide a valid email address.
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Services-->
-       
-        <section class="page-section" id="services">
-            <div class="d-flex justify-content-center gap-5 flex-wrap">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <h2 class="h4 mb-2">
-                            <a href="https://www.facebook.com/profile.php?id=61570986010514&rdid=r3ZSLQahJNJWlH3r&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ZFnLERik5#">
-                              <img class="image2" src="assets\Jd.jpg" alt="JD WORKS">  
-                            </a>
-                        </h2>
-                        
+
+                <!-- Event Field -->
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="event" type="text" placeholder="Event name" required />
+                    <label for="event">Event Name</label>
+                    <div class="invalid-feedback">
+                        Please provide an event name.
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <h2 class="h4 mb-2">
-                            <a href="https://www.facebook.com/mechaindie?rdid=SwiiuW77Ie4soFqE&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ATMSGewaJ#">
-                                <img class="image2" src="assets\mecha.jpg" alt="MECHA INDUSTRIES">
-                            </a>
-                        </h2>
-                        
+
+                <!-- Gender Field -->
+                <div class="mb-3">
+                    <label class="form-label d-block">Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required />
+                        <label class="form-check-label" for="genderMale">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" />
+                        <label class="form-check-label" for="genderFemale">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other" />
+                        <label class="form-check-label" for="genderOther">Other</label>
+                    </div>
+                    <div class="gender-error">
+                        Please select your gender.
                     </div>
                 </div>
-            </div>
-        </section>
-        
-                                        
-    
-        </section>
-        <!-- Portfolio-->
-        <div id="portfolio">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="/Volumes/LEVI/startbootstrap-creative-gh-pages/1.2.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets\1.6.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50"></div>
-                                <div class="project-name">MIDNIGHT SR</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="" title="Project Name">  
-                            <img class="img-fluid" src="assets\1.2.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50"></div>
-                                <div class="project-name">MIDNIGHT SR</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="c:\Users\johnl\Documents\website community\assets\1.5.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets\1.5.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50"></div>
-                                <div class="project-name">MIDNIGHT SR</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="c:\web community\webclient\startbootstrap-creative-gh-pages\1.5.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets\1.1.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50"></div>
-                                <div class="project-name">MIDNIGHT SR</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="c:\web community\webclient\startbootstrap-creative-gh-pages\1.6.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets\1.3.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50"></div>
-                                <div class="project-name">MIDNIGHT SR</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="c:\web community\webclient\startbootstrap-creative-gh-pages\1.1.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets\1.4.jpg" alt="..." />
-                            <div class="portfolio-box-caption p-3">
-                                <div class="project-category text-white-50"></div>
-                                <div class="project-name">MIDNIGHT SR</div>
-                            </div>
-                        </a>
+
+                <!-- Date Field -->
+                <div class="mb-3">
+                    <label for="date" class="form-label">Event Date</label>
+                    <input class="form-control" id="date" type="date" required />
+                    <div class="invalid-feedback">
+                        Please select a date.
                     </div>
                 </div>
-            </div>
+
+                <!-- Message Field -->
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="message" placeholder="Your message here..." style="height: 10rem" required></textarea>
+                    <label for="message">Message/Comments</label>
+                    <div class="invalid-feedback">
+                        Please enter your message.
+                    </div>
+                </div>
+
+                <!-- Submit feedback -->
+                <div class="d-none alert alert-success text-center mb-3" id="submitSuccessMessage">
+                    <strong>Success!</strong> Form submitted successfully!
+                </div>
+                <div class="d-none alert alert-danger text-center mb-3" id="submitErrorMessage">
+                    <strong>Error!</strong> There was a problem submitting your form. Please try again.
+                </div>
+
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
+                </div>
+            </form>
         </div>
-        <!-- Call to action-->
+    </section>
 
-        
-    <!-- Contact-->
-<section class="page-section" id="contact">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8 col-xl-6 text-center">
-                <h2 class="mt-0">Let's Get In Touch!</h2>
-                <hr class="divider" />
-                <p class="text-muted mb-5">Ready to be part of our Club and join every events?</p>
-            </div>
-        </div>
-        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-            <div class="col-lg-6">
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Name input -->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="name" data-sb-validations="required" required />
-                        <label for="name">Full name</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
-                    <!-- Email input -->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" name="email" data-sb-validations="required,email" required />
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                    </div>
+    <!-- Firebase Integration -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js';
+        import { getDatabase, ref, push, set } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js';
 
-                    <!-- Event input -->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="event_name" type="text" placeholder="Event Name" name="event" data-sb-validations="required" required />
-                        <label for="event_name">Name of Event</label>
-                        <div class="invalid-feedback" data-sb-feedback="event:required">An event name is required.</div>
-                    </div>
+        // Firebase configuration (double check these values)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDZOHiQyl4hykUcaiqYEC7lnxACxsWpRFw",
+            authDomain: "midnightsr-db-e2d15.firebaseapp.com",
+            databaseURL: "https://midnightsr-db-e2d15-default-rtdb.firebaseio.com",
+            projectId: "midnightsr-db-e2d15",
+            storageBucket: "midnightsr-db-e2d15.appspot.com",
+            messagingSenderId: "642482635950",
+            appId: "1:642482635950:web:92b7b6e1a23b3b745a593f"
+        };
 
-                    <!-- Gender input -->
-                    <div class="mb-3">
-                        <label class="form-label d-block">Gender</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required />
-                            <label class="form-check-label" for="genderMale">Male</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" />
-                            <label class="form-check-label" for="genderFemale">Female</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other" />
-                            <label class="form-check-label" for="genderOther">Others</label>
-                        </div>
-                    </div>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        console.log("Firebase initialized successfully");
 
-                    <!-- Date input -->
-                    <div class="mb-3">
-                        <label for="event_date" class="form-label">Event Date</label>
-                        <input class="form-control" type="date" id="event_date" name="date" required />
-                    </div>
-
-                    <!-- Message / Comments input -->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" name="comments" placeholder="Type your comments here..." style="height: 10rem" data-sb-validations="required" required></textarea>
-                        <label for="message">Comments / Message</label>
-                        <div class="invalid-feedback" data-sb-feedback="comments:required">A message is required.</div>
-                    </div>
-
-                    <!-- Success message -->
-                    <div class="d-none" id="submitted_at">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            <br />
-                            <a href="index.html"></a>
-                        </div>
-                    </div>
-
-                    <!-- Error message -->
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Error sending message!</div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="d-grid">
-                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-                  
-                                
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>(+63) 9459974405</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2025 - Midnight SR</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <!--Firebase SDK-->
-        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-        <scri[t src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
-
-            <script>
-               const firebaseConfig = {
-              apiKey: "AIzaSyBVx56_9igWJZyLnAVf28uEM1yuCJY4P9U",
-              authDomain: "midnightsr-db-37232.firebaseapp.com",
-              databaseURL: "https://midnightsr-db-37232-default-rtdb.firebaseio.com",
-              projectId: "midnightsr-db-37232",
-              storageBucket: "midnightsr-db-37232.firebasestorage.app",
-              messagingSenderId: "972165014924",
-              appId: "1:972165014924:web:8e03bf4a457d350f0de2a9"
-};
-                };
-
-                //Initialize Firebase
-                const app = firebase.initializeApp(firebaseConfig);
-                const db = firebase.firestore();
-            </script>
-            </script>
-
+        // Form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const genderError = document.querySelector('.gender-error');
+            const radioButtons = document.querySelectorAll('input[type="radio"][name="gender"]');
             
-    </body>
+            // Real-time validation
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.checkValidity()) {
+                        input.classList.remove('is-invalid');
+                        const feedback = input.nextElementSibling;
+                        if (feedback && feedback.classList.contains('invalid-feedback')) {
+                            feedback.style.display = 'none';
+                        }
+                    }
+                });
+            });
+
+            // Radio button validation
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    genderError.style.display = 'none';
+                    radioButtons.forEach(r => r.classList.remove('is-invalid'));
+                });
+            });
+
+            // Form submission
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Reset validation
+                contactForm.classList.add('was-validated');
+                inputs.forEach(input => {
+                    input.classList.remove('is-invalid');
+                    const feedback = input.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.style.display = 'none';
+                    }
+                });
+                
+                // Check gender selection
+                const genderSelected = document.querySelector('input[name="gender"]:checked');
+                if (!genderSelected) {
+                    genderError.style.display = 'block';
+                    radioButtons.forEach(radio => radio.classList.add('is-invalid'));
+                }
+                
+                // Validate form
+                if (!contactForm.checkValidity() || !genderSelected) {
+                    // Highlight invalid fields
+                    const invalidInputs = contactForm.querySelectorAll(':invalid');
+                    invalidInputs.forEach(input => {
+                        input.classList.add('is-invalid');
+                        const feedback = input.nextElementSibling;
+                        if (feedback && feedback.classList.contains('invalid-feedback')) {
+                            feedback.style.display = 'block';
+                        }
+                    });
+                    return;
+                }
+                
+                // Get form values
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    event: document.getElementById('event').value.trim(),
+                    gender: genderSelected.value,
+                    date: document.getElementById('date').value,
+                    message: document.getElementById('message').value.trim(),
+                    timestamp: new Date().toISOString()
+                };
+                
+                try {
+                    // Submit to Firebase
+                    const contactsRef = ref(database, 'contacts');
+                    const newContactRef = push(contactsRef);
+                    await set(newContactRef, formData);
+                    
+                    // Show success
+                    document.getElementById('submitSuccessMessage').classList.remove('d-none');
+                    document.getElementById('submitErrorMessage').classList.add('d-none');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                    inputs.forEach(input => input.classList.remove('is-valid', 'is-invalid'));
+                    radioButtons.forEach(radio => radio.classList.remove('is-valid', 'is-invalid'));
+                    genderError.style.display = 'none';
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('submitSuccessMessage').classList.add('d-none');
+                    }, 5000);
+                    
+                } catch (error) {
+                    console.error('Firebase error:', error);
+                    document.getElementById('submitErrorMessage').classList.remove('d-none');
+                    document.getElementById('submitSuccessMessage').classList.add('d-none');
+                    
+                    // Hide error message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('submitErrorMessage').classList.add('d-none');
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+</body>
 </html>
