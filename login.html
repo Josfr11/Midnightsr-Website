@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,25 +13,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- ✅ Firebase App & Firestore -->
+    <!-- ✅ Firebase App & Firebase Realtime Database -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
-        // ✅ Your Firebase configuration
+        // ✅ Firebase Configuration (replace with your Firebase project configuration)
         const firebaseConfig = {
             apiKey: "AIzaSyDZOHiQyl4hykUcaiqYEC7lnxACxsWpRFw",
             authDomain: "midnightsr-db-e2d15.firebaseapp.com",
-            databaseURL: "https://midnightsr-db-e2d15-default-rtdb.firebaseio.com",
+            databaseURL: "https://midnightsr-db-e2d15-default-rtdb.firebaseio.com", // Realtime DB URL
             projectId: "midnightsr-db-e2d15",
             storageBucket: "midnightsr-db-e2d15.firebasestorage.app",
             messagingSenderId: "642482635950",
             appId: "1:642482635950:web:92b7b6e1a23b3b745a593f"
         };
 
-        // ✅ Initialize Firebase and Firestore
+        // ✅ Initialize Firebase and Realtime Database
         const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+        const db = getDatabase(app);
 
         // ✅ Handle form submission
         document.addEventListener("DOMContentLoaded", () => {
@@ -39,6 +40,7 @@
             form.addEventListener("submit", async (e) => {
                 e.preventDefault();
 
+                // Get form values
                 const name = document.getElementById("name").value.trim();
                 const email = document.getElementById("email").value.trim();
                 const event = document.getElementById("event").value.trim();
@@ -46,22 +48,33 @@
                 const date = document.getElementById("date").value;
                 const message = document.getElementById("message").value.trim();
 
+                // Validate if all fields are filled
+                if (!name || !email || !event || !date || !message) {
+                    document.getElementById("submitErrorMessage").classList.remove("d-none");
+                    document.getElementById("submitSuccessMessage").classList.add("d-none");
+                    return;
+                }
+
+                // Write data to Firebase Realtime Database
                 try {
-                    await addDoc(collection(db, "contacts"), {
+                    const newRef = ref(db, 'contacts/' + Date.now()); // Using timestamp for unique key
+                    await set(newRef, {
                         name,
                         email,
                         event,
                         gender,
                         date,
                         message,
-                        timestamp: new Date()
+                        timestamp: new Date().toISOString() // Use ISO string format for timestamps
                     });
 
+                    // Show success message and reset form
                     document.getElementById("submitSuccessMessage").classList.remove("d-none");
                     document.getElementById("submitErrorMessage").classList.add("d-none");
                     form.reset();
+
                 } catch (error) {
-                    console.error("Error writing to Firestore:", error);
+                    console.error("Error writing to Firebase Realtime Database:", error);
                     document.getElementById("submitErrorMessage").classList.remove("d-none");
                     document.getElementById("submitSuccessMessage").classList.add("d-none");
                 }
@@ -136,4 +149,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
