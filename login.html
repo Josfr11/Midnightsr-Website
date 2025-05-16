@@ -16,6 +16,8 @@
         .invalid-feedback {
             display: none;
             color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
         }
         .is-invalid {
             border-color: #dc3545 !important;
@@ -26,6 +28,13 @@
         }
         .was-validated .form-check-input:invalid {
             border-color: #dc3545 !important;
+        }
+        .gender-error {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
         }
     </style>
 </head>
@@ -81,7 +90,7 @@
                         <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other" />
                         <label class="form-check-label" for="genderOther">Other</label>
                     </div>
-                    <div class="invalid-feedback" style="display: block;">
+                    <div class="gender-error">
                         Please select your gender.
                     </div>
                 </div>
@@ -105,8 +114,12 @@
                 </div>
 
                 <!-- Submit feedback -->
-                <div class="d-none text-success text-center mb-3" id="submitSuccessMessage">Form submitted successfully!</div>
-                <div class="d-none text-danger text-center mb-3" id="submitErrorMessage">Error submitting form. Please try again.</div>
+                <div class="d-none alert alert-success text-center mb-3" id="submitSuccessMessage">
+                    <strong>Success!</strong> Form submitted successfully!
+                </div>
+                <div class="d-none alert alert-danger text-center mb-3" id="submitErrorMessage">
+                    <strong>Error!</strong> There was a problem submitting your form. Please try again.
+                </div>
 
                 <div class="d-grid">
                     <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
@@ -144,6 +157,8 @@
         // Handle form submission
         document.addEventListener('DOMContentLoaded', function() {
             const contactForm = document.getElementById('contactForm');
+            const genderError = document.querySelector('.gender-error');
+            const radioButtons = document.querySelectorAll('input[type="radio"][name="gender"]');
             
             // Real-time validation as user types
             const inputs = contactForm.querySelectorAll('input, textarea, select');
@@ -151,25 +166,19 @@
                 input.addEventListener('input', () => {
                     if (input.checkValidity()) {
                         input.classList.remove('is-invalid');
-                        input.classList.add('is-valid');
-                    } else {
-                        input.classList.remove('is-valid');
+                        input.nextElementSibling?.classList?.contains('invalid-feedback') && 
+                            (input.nextElementSibling.style.display = 'none');
                     }
                 });
             });
 
             // For radio buttons
-            const radioButtons = document.querySelectorAll('input[type="radio"][name="gender"]');
             radioButtons.forEach(radio => {
                 radio.addEventListener('change', () => {
-                    const genderGroup = document.querySelector('input[name="gender"]:checked');
-                    if (genderGroup) {
-                        radioButtons.forEach(r => {
-                            r.classList.remove('is-invalid');
-                            r.classList.add('is-valid');
-                        });
-                        document.querySelector('.invalid-feedback[style="display: block;"]').style.display = 'none';
-                    }
+                    genderError.style.display = 'none';
+                    radioButtons.forEach(r => {
+                        r.classList.remove('is-invalid');
+                    });
                 });
             });
 
@@ -177,22 +186,29 @@
                 e.preventDefault();
                 e.stopPropagation();
                 
-                // Validate form
-                if (!contactForm.checkValidity()) {
-                    // Show validation errors
-                    contactForm.classList.add('was-validated');
-                    
-                    // Special handling for radio buttons
-                    const genderSelected = document.querySelector('input[name="gender"]:checked');
-                    if (!genderSelected) {
-                        document.querySelector('.invalid-feedback[style="display: block;"]').style.display = 'block';
-                        radioButtons.forEach(radio => {
-                            radio.classList.add('is-invalid');
-                        });
-                    } else {
-                        document.querySelector('.invalid-feedback[style="display: block;"]').style.display = 'none';
+                // Reset validation states
+                contactForm.classList.add('was-validated');
+                inputs.forEach(input => {
+                    input.classList.remove('is-invalid');
+                    const feedback = input.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.style.display = 'none';
                     }
-                    
+                });
+                
+                // Check gender selection
+                const genderSelected = document.querySelector('input[name="gender"]:checked');
+                if (!genderSelected) {
+                    genderError.style.display = 'block';
+                    radioButtons.forEach(radio => {
+                        radio.classList.add('is-invalid');
+                    });
+                } else {
+                    genderError.style.display = 'none';
+                }
+                
+                // Validate form
+                if (!contactForm.checkValidity() || !genderSelected) {
                     // Highlight invalid fields
                     const invalidInputs = contactForm.querySelectorAll(':invalid');
                     invalidInputs.forEach(input => {
@@ -210,7 +226,7 @@
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const event = document.getElementById('event').value.trim();
-                const gender = document.querySelector('input[name="gender"]:checked')?.value || 'unspecified';
+                const gender = genderSelected.value;
                 const date = document.getElementById('date').value;
                 const message = document.getElementById('message').value.trim();
                 
@@ -242,16 +258,22 @@
                     radioButtons.forEach(radio => {
                         radio.classList.remove('is-valid', 'is-invalid');
                     });
+                    genderError.style.display = 'none';
                     
-                    // Hide all error messages
-                    document.querySelectorAll('.invalid-feedback').forEach(el => {
-                        el.style.display = 'none';
-                    });
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('submitSuccessMessage').classList.add('d-none');
+                    }, 5000);
                 })
                 .catch((error) => {
                     console.error('Error writing to Firebase Database', error);
                     document.getElementById('submitErrorMessage').classList.remove('d-none');
                     document.getElementById('submitSuccessMessage').classList.add('d-none');
+                    
+                    // Hide error message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('submitErrorMessage').classList.add('d-none');
+                    }, 5000);
                 });
             });
         });
