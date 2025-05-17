@@ -17,33 +17,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <style>
-            .invalid-feedback {
-                display: none;
-                color: #dc3545;
-                font-size: 0.875em;
-            }
-            .is-invalid {
-                border-color: #dc3545 !important;
-            }
-            .gender-error {
-                display: none;
-                color: #dc3545;
-                font-size: 0.875em;
-            }
-            .alert {
-                margin-top: 1rem;
-            }
-            /* Add these styles to make sections white */
-            #services {
-                background-color: white;
-                padding: 80px 0;
-            }
-            #contact {
-                background-color: white;
-                padding: 80px 0;
-            }
-        </style>
+        <link href="css/styles.css4.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -76,40 +50,292 @@
                 </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">About Us</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">About Midnight SR
-                            Midnight SR is more than just a motorcycle club its a brotherhood built on respect, loyalty, and the love for the open road. Founded by passionate riders, we believe in the freedom that comes with every mile, the bonds formed on every journey, and the responsibility we carry as part of the riding community.
-                            <h2 class="text-white mt-0">Who We Are?</h2>
-                            <hr class="divider divider-light" />
-                            <p class="text-white-75 mb-4">
-                            We are a group of riders united by our passion for motorcycles and a commitment to supporting one another both on and off the road. Whether it's late-night rides, or just sharing stories over a bonfire, Midnight SR is a family that rides as one.</p>
-                            <h2 class="text-white mt-0">Mission</h2>
-                            <hr class="divider divider-light" />
-                            <p class="text-white-75 mb-4">Our Mission
-                            To promote safe and responsible riding.</p>
-                            
-                            <p class="text-white-75 mb-4">To foster strong camaraderie among fellow riders.</p>
-                            
-                            <p class="text-white-75 mb-4">To support our community through events and outreach programs.</p>
-                            
-                            <p class="text-white-75 mb-4">To uphold the traditions of the motorcycle culture with honor and pride.</p>
-                            <h2 class="text-white mt-0">Join the Ride!</h2>
-                            <hr class="divider divider-light" />
-                            <p class="text-white-75 mb-4"> Join the Ride
-                            At Midnight SR, we welcome riders who share our values of brotherhood, respect, and adventure. Whether you ride solo or as part of a crew, if you have the heart of a true rider, you have a place with us.
-                            
-                            We Ride as One! </p>
-                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+ <!-- About-->
+<section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 text-center">
+                <!-- About Us Section with Flip Animation -->
+                <div class="section-toggle mb-5" onclick="toggleSection('aboutContent')">
+                    <h2 class="text-white mt-0 clickable-header animate__animated animate__flipInX">
+                        About Us <i class="bi bi-chevron-down"></i>
+                    </h2>
+                    <hr class="divider divider-light animate__animated animate__fadeIn" />
+                    <div id="aboutContent" class="toggle-content">
+                        <div class="animate__animated animate__flipInY animate__delay-1s">
+                            <p class="text-white-75 mb-3">
+                                <span class="highlight-text">Founded in 2020</span>, Midnight SR has grown from a small group of passionate riders to one of the most respected motorcycle clubs in the region. 
+                            </p>
+                            <p class="text-white-75 mb-3">
+                                Our <span class="highlight-text">signature midnight rides</span> under the stars have become legendary, giving birth to our name and identity. 
+                            </p>
+                            <p class="text-white-75">
+                                Each year, we organize <span class="highlight-text">charity rides</span> that have raised over ₱500,000 for local communities.
+                            </p>
+                        </div>
+                        <div class="text-center mt-4 animate__animated animate__bounceIn animate__delay-2s">
+                            <img src="c:\Users\johnl\Desktop\website community\assets\img\416328080_389790163457371_7215092823150995465_n.jpg" alt="Club Logo" class="floating-icon" style="width: 80px;">
+                        </div>
+                    </div>
+                </div>
+<!-- Who We Are Section -->
+<div class="section-toggle mb-5" onclick="toggleSection('whoWeAreContent')">
+    <h2 class="text-white mt-0 clickable-header animate__animated animate__rotateIn">
+        Who We Are? <i class="bi bi-chevron-down"></i>
+    </h2>
+    <hr class="divider divider-light animate__animated animate__fadeIn" />
+    <div id="whoWeAreContent" class="toggle-content">
+        <div class="animate__animated animate__zoomIn animate__delay-1s">
+            <p class="text-white-75 mb-3">
+                We are <span class="highlight-text">doctors, engineers, artists, and entrepreneurs</span> who leave our titles at the garage door. 
+            </p>
+            <p class="text-white-75 mb-3">
+                Recognized by our <span class="highlight-text">black and silver gear</span> with the club's insignia.
+            </p>
+            
+            <!-- Events Container - Now using grid for better responsiveness -->
+            <div class="events-container mt-4 animate__animated animate__jackInTheBox animate__delay-2s">
+                <!-- Wrench Nights -->
+                <div class="event-card" onclick="toggleEventInfo('wrenchInfo', event)">
+                    <div class="event-header">
+                        <i class="bi bi-tools event-icon"></i>
+                        <h4>Wrench Nights</h4>
+                    </div>
+                    <div id="wrenchInfo" class="event-info">
+                        <div class="event-details">
+                            <p>
+                                Our monthly <strong>Wrench Nights</strong> are where members gather to share mechanical expertise. 
+                                Beginners learn oil changes and basic maintenance, while advanced riders work on custom mods. 
+                                Last month we had 15 bikes getting prepped for the season!
+                            </p>
+                            <ul class="event-meta">
+                                <li><i class="bi bi-calendar"></i> Every 2nd Thursday</li>
+                                <li><i class="bi bi-geo"></i> JD Works Garage</li>
+                                <li><i class="bi bi-people"></i> Open to all members</li>
+                                <li><i class="bi bi-wrench"></i> Tools provided</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Iron Rider -->
+                <div class="event-card" onclick="toggleEventInfo('ironInfo', event)">
+                    <div class="event-header">
+                        <i class="bi bi-speedometer2 event-icon"></i>
+                        <h4>Iron Rider</h4>
+                    </div>
+                    <div id="ironInfo" class="event-info">
+                        <div class="event-details">
+                            <p>
+                                The annual <strong>Iron Rider Challenge</strong> tests endurance and skill with a 500km ride 
+                                through mountain passes and coastal roads. Participants must complete the route 
+                                within 12 hours with only fuel stops allowed.
+                            </p>
+                            <ul class="event-meta">
+                                <li><i class="bi bi-trophy"></i> 2023 Winner: Rico M. (8h42m)</li>
+                                <li><i class="bi bi-exclamation-triangle"></i> Safety inspection required</li>
+                                <li><i class="bi bi-cash"></i> ₱2,000 entry fee (charity)</li>
+                                <li><i class="bi bi-stopwatch"></i> Starts at 5AM sharp</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coastal Runs -->
+                <div class="event-card" onclick="toggleEventInfo('coastalInfo', event)">
+                    <div class="event-header">
+                        <i class="bi bi-geo-alt event-icon"></i>
+                        <h4>Coastal Runs</h4>
+                    </div>
+                    <div id="coastalInfo" class="event-info">
+                        <div class="event-details">
+                            <p>
+                                Our famous <strong>spontaneous coastal runs</strong> begin with a text blast at dawn. 
+                                Riders meet at the Shell station by 6AM for a mystery route along the 
+                                most scenic coastal roads. No GPS allowed - follow the leader!
+                            </p>
+                            <ul class="event-meta">
+                                <li><i class="bi bi-sun"></i> Summer months only</li>
+                                <li><i class="bi bi-emoji-smile"></i> Breakfast stop included</li>
+                                <li><i class="bi bi-rainbow"></i> Best sunrises you'll ever see</li>
+                                <li><i class="bi bi-phone"></i> RSVP required</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Improved toggle function with better mobile support
+    function toggleEventInfo(infoId, event) {
+        event.stopPropagation();
+        const infoBox = document.getElementById(infoId);
+        const eventCard = event.currentTarget;
+        
+        // Close other open info boxes first
+        document.querySelectorAll('.event-info').forEach(box => {
+            if (box.id !== infoId && box.classList.contains('show')) {
+                box.classList.remove('show');
+                box.parentElement.classList.remove('active');
+            }
+        });
+        
+        // Toggle current box
+        infoBox.classList.toggle('show');
+        eventCard.classList.toggle('active');
+        
+        // Mobile-specific adjustments
+        if (window.innerWidth <= 768) {
+            if (infoBox.classList.contains('show')) {
+                setTimeout(() => {
+                    eventCard.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                }, 300); // Wait for animation to start
+            }
+        }
+    }
+    
+    // Auto-close when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            if (!e.target.closest('.event-card')) {
+                document.querySelectorAll('.event-info.show').forEach(box => {
+                    box.classList.remove('show');
+                    box.parentElement.classList.remove('active');
+                });
+            }
+        }
+    });
+</script>
+                <!-- Mission Section with Special Animations -->
+                <div class="section-toggle mb-5" onclick="toggleSection('missionContent')">
+                    <h2 class="text-white mt-0 clickable-header animate__animated animate__lightSpeedInRight">
+                        Our Mission <i class="bi bi-chevron-down"></i>
+                    </h2>
+                    <hr class="divider divider-light animate__animated animate__fadeIn" />
+                    <div id="missionContent" class="toggle-content mission-points">
+                        <div class="mission-item animate__animated animate__slideInLeft animate__delay-1s">
+                            <i class="bi bi-shield-check mission-icon floating"></i>
+                            <p class="text-white-75">
+                                <strong>Safety First:</strong> Quarterly safety workshops and advanced riding courses.
+                            </p>
+                        </div>
+                        <div class="mission-item animate__animated animate__slideInRight animate__delay-1s">
+                            <i class="bi bi-people-fill mission-icon floating"></i>
+                            <p class="text-white-75">
+                                <strong>Brotherhood:</strong> National support network across chapters.
+                            </p>
+                        </div>
+                        <div class="mission-item animate__animated animate__slideInLeft animate__delay-2s">
+                            <i class="bi bi-heart-fill mission-icon floating"></i>
+                            <p class="text-white-75">
+                                <strong>Community:</strong> "Ride for Hope" and other initiatives.
+                            </p>
+                        </div>
+                        <div class="mission-item animate__animated animate__slideInRight animate__delay-2s">
+                            <i class="bi bi-trophy-fill mission-icon floating"></i>
+                            <p class="text-white-75">
+                                <strong>Culture:</strong> Preserving riding heritage and traditions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Join the Ride Section with Special Animation -->
+                <div class="animate__animated animate__fadeInUp">
+                    <h2 class="text-white mt-0">Join the Ride!</h2>
+                    <hr class="divider divider-light" />
+                    <p class="text-white-75 mb-4">
+                        <span class="typing-text"></span>
+                    </p>
+                    <a class="btn btn-light btn-xl animate__animated animate__pulse animate__infinite" href="#services">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // Toggle sections function with enhanced animations
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const header = document.querySelector(`[onclick="toggleSection('${sectionId}')"] .bi-chevron-down`);
+        
+        // Add animation class when showing
+        if (!section.classList.contains('show')) {
+            const animElements = section.querySelectorAll('.animate__animated');
+            animElements.forEach(el => {
+                el.style.opacity = '0';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.classList.add(el.dataset.anim);
+                }, 50);
+            });
+        }
+        
+        section.classList.toggle('show');
+        
+        // Rotate chevron icon
+        if (section.classList.contains('show')) {
+            header.classList.remove('bi-chevron-down');
+            header.classList.add('bi-chevron-up');
+        } else {
+            header.classList.remove('bi-chevron-up');
+            header.classList.add('bi-chevron-down');
+        }
+    }
+
+    // Typing animation for Join the Ride text
+    function initTypingAnimation() {
+        const text = "Prospective members undergo a 6-month probation period where we ride together and work on community projects...";
+        const typingElement = document.querySelector('.typing-text');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, Math.random() * 50 + 30);
+            }
+        }
+        
+        // Start typing after a delay
+        setTimeout(typeWriter, 2000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Open the first section automatically
+        toggleSection('aboutContent');
+        
+        // Initialize typing animation
+        initTypingAnimation();
+        
+        // Add scroll animations
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.section-toggle, .animate__animated');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    if (element.classList.contains('section-toggle')) {
+                        element.querySelector('h2').classList.add('animate__flipInX');
+                    }
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    });
+</script>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
@@ -129,7 +355,6 @@
                             </p>
                             <div class="mt-3">
                                 <a href="https://www.facebook.com/profile.php?id=61570986010514" target="_blank" class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-facebook"></i> Facebook
                                 </a>
                             </div>
                         </div>
@@ -149,7 +374,6 @@
                             </p>
                             <div class="mt-3">
                                 <a href="https://www.facebook.com/mechaindie" target="_blank" class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-facebook"></i> Facebook
                                 </a>
                             </div>
                         </div>
@@ -169,7 +393,6 @@
                             </p>
                             <div class="mt-3">
                                 <a href="https://www.facebook.com/RS54CarSpaQC" target="_blank" class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-facebook"></i> Facebook
                                 </a>
                             </div>
                         </div>
@@ -190,7 +413,6 @@
                             </p>
                             <div class="mt-3">
                                 <a href="https://www.facebook.com/rrperformance.motorparts" target="_blank" class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-facebook"></i> Facebook
                                 </a>
                             </div>
                         </div>
@@ -199,19 +421,6 @@
             </div>
         </section>
 
-        <style>
-            .partner-card {
-                background-color: #f8f9fa;
-                border-radius: 10px;
-                transition: transform 0.3s ease;
-                height: 100%;
-            }
-            .partner-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            }
-        </style>
-            
         <!-- Portfolio-->
         <div id="portfolio">
             <div class="container-fluid p-0">
@@ -375,10 +584,106 @@
                 </div>
             </div>
         </section>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2025 - Midnight SR</div></div>
-        </footer>
+      
+       <!-- Footer-->
+<footer class="bg-light py-5">
+    <div class="container px-4 px-lg-5">
+        <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#about" class="text-decoration-none text-muted">About Us</a></li>
+                    <li class="mb-2"><a href="#services" class="text-decoration-none text-muted">Our Partners</a></li>
+                    <li class="mb-2"><a href="#portfolio" class="text-decoration-none text-muted">Events</a></li>
+                    <li class="mb-2"><a href="#contact" class="text-decoration-none text-muted">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="col-md-4 mb-4">
+                <h5 class="mb-3">Legal</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="#" class="text-decoration-none text-muted" data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="text-decoration-none text-muted" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-4">
+                <h5 class="mb-3">Contact Info</h5>
+                <ul class="list-unstyled text-muted">
+                    <li class="mb-2"><i class="bi bi-phone me-2"></i> (+63) 9459974405</li>
+                    <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@midnightsr.com</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="small text-center text-muted">Copyright &copy; 2025 - Midnight SR</div>
+    </div>
+</footer>
+
+<!-- Terms & Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. Membership</h6>
+                <p>All members must complete a 6-month probation period before full membership is granted. During this time, prospective members must attend at least 3 club events and 2 community service activities.</p>
+                
+                <h6>2. Code of Conduct</h6>
+                <p>Members are expected to uphold the highest standards of behavior both on and off the road. Any behavior that brings disrepute to the club may result in disciplinary action up to and including expulsion.</p>
+                
+                <h6>3. Safety Requirements</h6>
+                <p>All riders must wear appropriate safety gear during club rides, including DOT-approved helmets, protective jackets, gloves, and boots. Members must maintain their motorcycles in safe operating condition.</p>
+                
+                <h6>4. Event Participation</h6>
+                <p>Members are encouraged but not required to participate in club events. However, attendance at the annual general meeting is mandatory for all full members.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. Information Collection</h6>
+                <p>We collect personal information including name, contact details, and motorcycle information for membership purposes only. This information is used solely for club administration and event coordination.</p>
+                
+                <h6>2. Data Protection</h6>
+                <p>All personal information is stored securely and accessed only by authorized club officers. We implement appropriate security measures to protect against unauthorized access or disclosure.</p>
+                
+                <h6>3. Information Sharing</h6>
+                <p>Member information is never sold or shared with third parties except as required by law or for essential club operations (e.g., event registration with partner organizations).</p>
+                
+                <h6>4. Your Rights</h6>
+                <p>Members may request access to their personal data or request corrections at any time by contacting the club secretary. You may also request deletion of your data upon leaving the club.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
+        
+    
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- SimpleLightbox plugin JS-->
@@ -518,5 +823,6 @@
                 });
             });
         </script>
+
     </body>
 </html>
