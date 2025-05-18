@@ -11354,3 +11354,179 @@ header.masthead h1, header.masthead .h1 {
         height: 100px;
     }
 }
+
+/* Community Banner Styles */
+    .community-banner {
+        position: relative;
+        background: url('assets/img/banner-bg.jpg') no-repeat center center;
+        background-size: cover;
+        min-height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+    }
+    
+    .banner-content {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    /* Timeline Styles */
+    .timeline-item {
+        position: relative;
+        padding-left: 60px;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .timeline-content {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 3px solid #f4623a;
+    }
+    
+    /* Community Cards */
+    .community-card {
+        background: rgba(255,255,255,0.1);
+        padding: 25px;
+        border-radius: 8px;
+        height: 100%;
+        transition: transform 0.3s;
+    }
+    
+    .community-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .community-icon {
+        font-size: 2.5rem;
+        color: #f4623a;
+        margin-bottom: 15px;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 8px;
+        height: 100%;
+        position: relative;
+    }
+    
+    .testimonial-card:before {
+        content: '"';
+        font-size: 4rem;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        opacity: 0.2;
+        line-height: 1;
+    }
+    
+    .testimonial-content {
+        padding-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .testimonial-author {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .testimonial-author span {
+        display: block;
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
+    
+    /* Values Grid */
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .value-item {
+        text-align: center;
+        padding: 25px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+    }
+    
+    .value-icon {
+        font-size: 2.5rem;
+        color: #f4623a;
+        margin-bottom: 15px;
+    }
+    
+    /* Join CTA */
+    .join-cta {
+        background: rgba(255,255,255,0.1);
+        padding: 40px;
+        border-radius: 10px;
+        margin-top: 40px;
+        text-align: center;
+        border: 1px dashed rgba(255,255,255,0.3);
+    }
+    
+    /* Section Headers */
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .section-icon {
+        font-size: 2rem;
+        color: #f4623a;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .community-banner {
+            min-height: 200px;
+        }
+        
+        .timeline-item {
+            padding-left: 45px;
+        }
+        
+        .timeline-year {
+            width: 40px;
+            height: 40px;
+            font-size: 0.9rem;
+        }
+    }
