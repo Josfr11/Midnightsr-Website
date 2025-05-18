@@ -54,119 +54,169 @@
 <section class="page-section bg-primary" id="about">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8 text-center">
-                <!-- About Us Section with Flip Animation -->
-                <div class="section-toggle mb-5" onclick="toggleSection('aboutContent')">
-                    <h2 class="text-white mt-0 clickable-header animate__animated animate__flipInX">
-                        About Us <i class="bi bi-chevron-down"></i>
-                    </h2>
-                    <hr class="divider divider-light animate__animated animate__fadeIn" />
-                    <div id="aboutContent" class="toggle-content">
-                        <div class="animate__animated animate__flipInY animate__delay-1s">
-                            <p class="text-white-75 mb-3">
-                                <span class="highlight-text">Founded in 2024</span>, Midnight Street Racing has grown from a small group of passionate riders to one of the most respected motorcycle clubs in the region. 
-                            </p>
-                            <p class="text-white-75 mb-3">
-                                Our <span class="highlight-text">signature midnight rides</span> under the stars have become legendary, giving birth to our name and identity. 
-                            </p>
-                            <p class="text-white-75">
-                                Each year, we organize <span class="highlight-text">charity rides</span> that have raised over ₱10,000 for local communities.
-                            </p>
-                        </div>
-                        <div class="text-center mt-4 animate__animated animate__bounceIn animate__delay-2s">
-                            <img src="assets/416328080_389790163457371_72150928231509954_n.jpg" alt="Club Logo" class="floating-icon" style="width: 80px;">
-                        </div>
+            <div class="col-lg-10 text-center">
+                <!-- Hero Community Banner -->
+                <div class="community-banner mb-5 animate__animated animate__fadeIn">
+                    <div class="banner-overlay"></div>
+                    <div class="banner-content">
+                        <h2 class="text-white display-4">The Midnight SR Brotherhood</h2>
+                        <p class="lead text-white">Where Passion Meets Purpose on Two Wheels</p>
                     </div>
                 </div>
-<!-- Who We Are Section -->
-<div class="section-toggle mb-5" onclick="toggleSection('whoWeAreContent')">
-    <h2 class="text-white mt-0 clickable-header animate__animated animate__rotateIn">
-        Who We Are? <i class="bi bi-chevron-down"></i>
-    </h2>
-    <hr class="divider divider-light animate__animated animate__fadeIn" />
-    <div id="whoWeAreContent" class="toggle-content">
-        <div class="animate__animated animate__zoomIn animate__delay-1s">
-            <p class="text-white-75 mb-3">
-                We are <span class="highlight-text">doctors, engineers, artists, and entrepreneurs</span> who leave our titles at the garage door. 
-            </p>
-            <p class="text-white-75 mb-3">
-                Recognized by our <span class="highlight-text">black and silver gear</span> with the club's insignia.
-            </p>
+              <!-- Our Story Section -->
+<div class="section-toggle mb-5" onclick="toggleSection('storyContent')">
+    <div class="section-header">
+        <i class="bi bi-book-half section-icon"></i>
+        <h2 class="text-white mt-0 clickable-header animate__animated">
+            Our Story <i class="bi bi-chevron-down"></i>
+        </h2>
+    </div>
+    <hr class="divider divider-light" />
+    <div id="storyContent" class="toggle-content">
+        <div class="story-content">
+            <div class="story-paragraph animate__animated animate__fadeIn">
+                <h4 class="text-white">Born Under the Moonlight</h4>
+                <p class="text-white-75">Midnight SR began when a group of night riders discovered the magic of empty city streets bathed in moonlight. What started as informal midnight meetups at a Pasig gas station evolved into something greater - a brotherhood bound by the hum of engines and the shared thrill of urban exploration after dark. Our signature midnight rides became legendary, where the city becomes our playground and the stars our navigation points.</p>
+            </div>
             
-            <!-- Events Container - Now using grid for better responsiveness -->
-            <div class="events-container mt-4 animate__animated animate__jackInTheBox animate__delay-2s">
-                <!-- Wrench Nights -->
-                <div class="event-card" onclick="toggleEventInfo('wrenchInfo', event)">
-                    <div class="event-header">
-                        <i class="bi bi-tools event-icon"></i>
-                        <h4>Wrench Nights</h4>
+            <div class="story-paragraph animate__animated animate__fadeIn">
+                <h4 class="text-white">More Than Just Rides</h4>
+                <p class="text-white-75">We quickly realized our rides could make a difference. Transforming from a riding group to a community force, we organized charity runs that turned our passion into purpose. The "Ride for Hope" events became our proudest tradition, where the roar of our engines translates to help for those in need. From delivering school supplies to remote communities to fundraising for disaster relief, we prove that riders can be angels on two wheels.</p>
+            </div>
+            
+            <div class="story-paragraph animate__animated animate__fadeIn">
+                <h4 class="text-white">A Brotherhood Forged on Asphalt</h4>
+                <p class="text-white-75">Today, Midnight SR stands as a testament to what happens when strangers become family through shared miles. Our rides are equal parts adventure and therapy - whether it's the adrenaline of our coastal sprints at dawn or the camaraderie of wrench nights in the garage. We've grown from seven bikes to hundreds, but the feeling remains the same: that magical moment when we all kickstart our engines in unison, ready to write another chapter of our story together on the open road.</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <img src="c:\Users\johnl\Desktop\website community\assets\3094becc-0637-4809-b9da-0ea18da256ff.jpeg" alt="Midnight SR Group Ride" class="img-fluid rounded shadow-lg" style="max-height: 400px;">
+        </div>
+    </div>
+</div>
+                <!-- Who We Are Section -->
+                <div class="section-toggle mb-5" onclick="toggleSection('whoWeAreContent')">
+                    <div class="section-header">
+                        <i class="bi bi-people-fill section-icon"></i>
+                        <h2 class="text-white mt-0 clickable-header animate__animated">
+                            Our Community <i class="bi bi-chevron-down"></i>
+                        </h2>
                     </div>
-                    <div id="wrenchInfo" class="event-info">
-                        <div class="event-details">
-                            <p>
-                                Our monthly <strong>Wrench Nights</strong> are where members gather to share mechanical expertise. 
-                                Beginners learn oil changes and basic maintenance, while advanced riders work on custom mods. 
-                                Last month we had 15 bikes getting prepped for the season!
-                            </p>
-                            <ul class="event-meta">
-                                <li><i class="bi bi-calendar"></i> Every 2nd Thursday</li>
-                                <li><i class="bi bi-geo"></i> JD Works Garage</li>
-                                <li><i class="bi bi-people"></i> Open to all members</li>
-                                <li><i class="bi bi-wrench"></i> Tools provided</li>
-                            </ul>
+                    <hr class="divider divider-light" />
+                    <div id="whoWeAreContent" class="toggle-content">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="community-card animate__animated animate__zoomIn">
+                                    <div class="community-icon">
+                                        <i class="bi bi-person-badge"></i>
+                                    </div>
+                                    <h4 class="text-white">50+ Members</h4>
+                                    <p class="text-white-75">From all walks of life - professionals, artists, entrepreneurs united by our love for riding</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="community-card animate__animated animate__zoomIn">
+                                    <div class="community-icon">
+                                        <i class="bi bi-geo-alt"></i>
+                                    </div>
+                                    <h4 class="text-white">3 Chapters</h4>
+                                    <p class="text-white-75">Pasig (HQ), Quezon City, and our newest chapter in Rizal province</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="community-card animate__animated animate__zoomIn">
+                                    <div class="community-icon">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                    <h4 class="text-white">₱50k+ Raised</h4>
+                                    <p class="text-white-75">For various community initiatives through our charity rides</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="community-card animate__animated animate__zoomIn">
+                                    <div class="community-icon">
+                                        <i class="bi bi-calendar-event"></i>
+                                    </div>
+                                    <h4 class="text-white">50+ Events</h4>
+                                    <p class="text-white-75">Organized annually including rides, workshops, and meetups</p>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Iron Rider -->
-                <div class="event-card" onclick="toggleEventInfo('ironInfo', event)">
-                    <div class="event-header">
-                        <i class="bi bi-speedometer2 event-icon"></i>
-                        <h4>Iron Rider</h4>
+
+                <!-- Our Values Section -->
+                <div class="section-toggle mb-5" onclick="toggleSection('valuesContent')">
+                    <div class="section-header">
+                        <i class="bi bi-stars section-icon"></i>
+                        <h2 class="text-white mt-0 clickable-header animate__animated">
+                            Our Values <i class="bi bi-chevron-down"></i>
+                        </h2>
                     </div>
-                    <div id="ironInfo" class="event-info">
-                        <div class="event-details">
-                            <p>
-                                The annual <strong>Iron Rider Challenge</strong> tests endurance and skill with a 500km ride 
-                                through mountain passes and coastal roads. Participants must complete the route 
-                                within 12 hours with only fuel stops allowed.
-                            </p>
-                            <ul class="event-meta">
-                                <li><i class="bi bi-trophy"></i></li>
-                                <li><i class="bi bi-exclamation-triangle"></i> Safety inspection required</li>
-                                <li><i class="bi bi-cash"></i> ₱2,000 entry fee (charity)</li>
-                                <li><i class="bi bi-stopwatch"></i> Starts at 5AM sharp</li>
-                            </ul>
+                    <hr class="divider divider-light" />
+                    <div id="valuesContent" class="toggle-content">
+                        <div class="values-grid">
+                            <div class="value-item animate__animated animate__fadeIn">
+                                <div class="value-icon">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <h4 class="text-white">Safety First</h4>
+                                <p class="text-white-75">Mandatory safety workshops and ride captain system ensure everyone comes home safe</p>
+                            </div>
+                            <div class="value-item animate__animated animate__fadeIn">
+                                <div class="value-icon">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <h4 class="text-white">Community</h4>
+                                <p class="text-white-75">We give back through charity rides, toy drives, and disaster relief efforts</p>
+                            </div>
+                            <div class="value-item animate__animated animate__fadeIn">
+                                <div class="value-icon">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <h4 class="text-white">Brotherhood</h4>
+                                <p class="text-white-75">No rider left behind - we support each other on and off the road</p>
+                            </div>
+                            <div class="value-item animate__animated animate__fadeIn">
+                                <div class="value-icon">
+                                    <i class="bi bi-book"></i>
+                                </div>
+                                <h4 class="text-white">Tradition</h4>
+                                <p class="text-white-75">We honor motorcycle culture while evolving with the times</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item rounded" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+                            </div>
+                            <p class="text-white-75 mt-2">Watch our 2025 Year in Review video</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Coastal Runs -->
-                <div class="event-card" onclick="toggleEventInfo('coastalInfo', event)">
-                    <div class="event-header">
-                        <i class="bi bi-geo-alt event-icon"></i>
-                        <h4>Coastal Runs</h4>
-                    </div>
-                    <div id="coastalInfo" class="event-info">
-                        <div class="event-details">
-                            <p>
-                                Our famous <strong>spontaneous coastal runs</strong> begin with a text blast at dawn. 
-                                Riders meet at the Shell station by 6AM for a mystery route along the 
-                                most scenic coastal roads. No GPS allowed - follow the leader!
-                            </p>
-                            <ul class="event-meta">
-                                <li><i class="bi bi-sun"></i> Summer months only</li>
-                                <li><i class="bi bi-emoji-smile"></i> Breakfast stop included</li>
-                                <li><i class="bi bi-rainbow"></i> Best sunrises you'll ever see</li>
-                                <li><i class="bi bi-phone"></i> RSVP required</li>
-                            </ul>
+
+                <!-- Join Us CTA -->
+                <div class="join-cta animate__animated animate__fadeInUp">
+                    <div class="cta-content">
+                        <h2 class="text-white">Ready to Join the Ride?</h2>
+                        <p class="text-white-75 mb-4">Attend a meetup as our guest and experience the brotherhood firsthand</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="#contact" class="btn btn-light btn-xl">Contact Us</a>
+                            <a href="#portfolio" class="btn btn-outline-light btn-xl">Upcoming Events</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <script>
     // Improved toggle function with better mobile support
