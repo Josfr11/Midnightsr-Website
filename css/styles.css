@@ -10932,14 +10932,10 @@ hr.divider-light {
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
     color: #f4623a;
   }
-}
-
+  
 header.masthead {
   /* Full viewport height */
   min-height: 100vh;
-  
-  /* Remove default padding */
-  padding: 0;
   
   /* Background with gradient overlay */
   background-image: 
@@ -10950,19 +10946,22 @@ header.masthead {
     ),
     url("../assets/416328080_389790163457371_7215092823150995465_n.jpg");
   
-  /* Full screen background properties */
+  /* Responsive background properties */
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Changed from scroll to fixed for full-screen effect */
   background-size: cover;
+  background-attachment: scroll; /* Better for mobile performance */
   
-  /* Flexbox for content centering */
+  /* Content container */
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Content container styling */
-  .container {
+  padding: 2rem;
+  box-sizing: border-box;
+
+  /* Desktop-specific styles */
+  @media (min-width: 992px) {
+    background-attachment: fixed; /* Parallax effect only on desktop */
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
   }
