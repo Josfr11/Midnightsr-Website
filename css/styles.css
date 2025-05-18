@@ -10935,13 +10935,37 @@ hr.divider-light {
 }
 
 header.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
-  background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/416328080_389790163457371_7215092823150995465_n.jpg");
-  background-position: center;
+  /* Full viewport height */
+  min-height: 100vh;
+  
+  /* Remove default padding */
+  padding: 0;
+  
+  /* Background with gradient overlay */
+  background-image: 
+    linear-gradient(
+      to bottom, 
+      rgba(92, 77, 66, 0.8) 0%, 
+      rgba(92, 77, 66, 0.8) 100%
+    ),
+url("../assets/416328080_389790163457371_7215092823150995465_n.jpg");
+  
+  /* Full screen background properties */
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: scroll;url   
+  background-attachment: fixed; /* Changed from scroll to fixed for full-screen effect */
   background-size: cover;
+  
+  /* Flexbox for content centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Content container styling */
+  .container {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+  }
 }
 /* Rest of your existing CSS remains the same */
 header.masthead h1, header.masthead .h1 {
