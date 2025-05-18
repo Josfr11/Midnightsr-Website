@@ -10932,10 +10932,16 @@ hr.divider-light {
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
     color: #f4623a;
   }
-  
+}
+
 header.masthead {
-  /* Full viewport height */
+  /* Full viewport height with fallback */
   min-height: 100vh;
+  min-height: 100dvh; /* Uses dynamic viewport height for mobile browsers */
+  
+  /* Remove default padding and margin */
+  padding: 0;
+  margin: 0;
   
   /* Background with gradient overlay */
   background-image: 
@@ -10944,26 +10950,54 @@ header.masthead {
       rgba(92, 77, 66, 0.8) 0%, 
       rgba(92, 77, 66, 0.8) 100%
     ),
-    url("../assets/416328080_389790163457371_7215092823150995465_n.jpg");
+    url("../assets//416328080_389790163457371_7215092823150995465_n.jpg");
   
-  /* Responsive background properties */
+  /* Background properties */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: scroll; /* Better for mobile performance */
   
-  /* Content container */
+  /* Use fixed attachment only for desktop */
+  background-attachment: fixed;
+  
+  /* Flexbox for content centering */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  box-sizing: border-box;
+  
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
 
-  /* Desktop-specific styles */
-  @media (min-width: 992px) {
-    background-attachment: fixed; /* Parallax effect only on desktop */
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
+header.masthead .container {
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  header.masthead {
+    /* Switch to scroll on mobile for better performance */
+    background-attachment: scroll;
+    
+    /* Adjust min-height if needed */
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  header.masthead .container {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Very small devices adjustment */
+@media (max-width: 480px) {
+  header.masthead .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 /* Rest of your existing CSS remains the same */
