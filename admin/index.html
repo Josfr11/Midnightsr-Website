@@ -175,7 +175,7 @@
             const password = document.getElementById('password').value;
 
             auth.signInWithEmailAndPassword(email, password)
-                .then(() => window.location.href = 'login.html')
+                .then(() => window.location.href = 'login1.html')
                 .catch((error) => {
                     document.getElementById('login-error').textContent = error.message;
                 });
